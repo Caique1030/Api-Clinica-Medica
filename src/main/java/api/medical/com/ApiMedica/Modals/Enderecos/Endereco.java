@@ -1,6 +1,6 @@
-package api.medical.com.ApiMedica.Modals;
+package api.medical.com.ApiMedica.Modals.Enderecos;
 
-import api.medical.com.ApiMedica.DTO.DadosEnderecosDTO;
+import api.medical.com.ApiMedica.DTO.EnderecosDto.DadosEnderecosDTO;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

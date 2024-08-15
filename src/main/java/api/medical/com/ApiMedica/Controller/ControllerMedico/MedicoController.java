@@ -1,7 +1,10 @@
-package api.medical.com.ApiMedica.Controller;
+package api.medical.com.ApiMedica.Controller.ControllerMedico;
 
-import api.medical.com.ApiMedica.DTO.*;
-import api.medical.com.ApiMedica.Modals.Medico;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosAtualizaMedicoDTO;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosCadastroMedicoDTO;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosDetalhamentoMedicoDTO;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosListagemMedicoDTO;
+import api.medical.com.ApiMedica.Modals.Medico.Medico;
 import api.medical.com.ApiMedica.Repositorio.MedicoRepositorio;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

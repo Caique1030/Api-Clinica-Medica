@@ -1,5 +1,6 @@
-package api.medical.com.ApiMedica.DTO;
+package api.medical.com.ApiMedica.DTO.MedicoDto;
 
+import api.medical.com.ApiMedica.DTO.EnderecosDto.DadosEnderecosDTO;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizaMedicoDTO(

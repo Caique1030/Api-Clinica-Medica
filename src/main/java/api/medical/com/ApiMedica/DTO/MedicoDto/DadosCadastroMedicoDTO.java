@@ -1,13 +1,12 @@
-package api.medical.com.ApiMedica.DTO;
+package api.medical.com.ApiMedica.DTO.MedicoDto;
 
+import api.medical.com.ApiMedica.DTO.EnderecosDto.DadosEnderecosDTO;
 import api.medical.com.ApiMedica.ENUM.Especialidade;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import org.aspectj.lang.annotation.RequiredTypes;
-import org.springframework.format.annotation.NumberFormat;
 
 public record DadosCadastroMedicoDTO(
         @NotBlank(message = "{nome.obrigatorio}")

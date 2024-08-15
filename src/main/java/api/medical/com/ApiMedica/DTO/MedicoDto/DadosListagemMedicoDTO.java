@@ -1,8 +1,8 @@
-package api.medical.com.ApiMedica.DTO;
+package api.medical.com.ApiMedica.DTO.MedicoDto;
 
 
 import api.medical.com.ApiMedica.ENUM.Especialidade;
-import api.medical.com.ApiMedica.Modals.Medico;
+import api.medical.com.ApiMedica.Modals.Medico.Medico;
 
 public record DadosListagemMedicoDTO(Long id, String nome, String email, String crm, Especialidade especialidade) {
 

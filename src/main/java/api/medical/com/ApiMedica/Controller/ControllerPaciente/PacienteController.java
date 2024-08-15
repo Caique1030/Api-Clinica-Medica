@@ -1,4 +1,4 @@
-package api.medical.com.ApiMedica.Controller;
+package api.medical.com.ApiMedica.Controller.ControllerPaciente;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

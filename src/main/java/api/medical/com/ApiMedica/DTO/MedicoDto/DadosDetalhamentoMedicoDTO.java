@@ -1,8 +1,8 @@
-package api.medical.com.ApiMedica.DTO;
+package api.medical.com.ApiMedica.DTO.MedicoDto;
 
 import api.medical.com.ApiMedica.ENUM.Especialidade;
-import api.medical.com.ApiMedica.Modals.Endereco;
-import api.medical.com.ApiMedica.Modals.Medico;
+import api.medical.com.ApiMedica.Modals.Enderecos.Endereco;
+import api.medical.com.ApiMedica.Modals.Medico.Medico;
 
 public record DadosDetalhamentoMedicoDTO(Long id,
                                          String nome,

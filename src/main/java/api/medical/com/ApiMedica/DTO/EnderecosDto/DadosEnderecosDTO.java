@@ -1,4 +1,4 @@
-package api.medical.com.ApiMedica.DTO;
+package api.medical.com.ApiMedica.DTO.EnderecosDto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

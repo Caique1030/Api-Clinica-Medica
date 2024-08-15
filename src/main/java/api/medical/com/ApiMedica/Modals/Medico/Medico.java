@@ -1,8 +1,9 @@
-package api.medical.com.ApiMedica.Modals;
+package api.medical.com.ApiMedica.Modals.Medico;
 
-import api.medical.com.ApiMedica.DTO.DadosAtualizaMedicoDTO;
-import api.medical.com.ApiMedica.DTO.DadosCadastroMedicoDTO;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosAtualizaMedicoDTO;
+import api.medical.com.ApiMedica.DTO.MedicoDto.DadosCadastroMedicoDTO;
 import api.medical.com.ApiMedica.ENUM.Especialidade;
+import api.medical.com.ApiMedica.Modals.Enderecos.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

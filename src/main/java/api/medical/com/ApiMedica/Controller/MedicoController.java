@@ -1,4 +1,4 @@
-package api.medical.com.ApiMedica.controller;
+package api.medical.com.ApiMedica.Controller;
 
 import api.medical.com.ApiMedica.DTO.*;
 import api.medical.com.ApiMedica.Modals.Medico;
@@ -11,10 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("medicos")

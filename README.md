@@ -34,7 +34,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Java 17](https://www.oracle.com/java)**
 - **[Spring Boot 3](https://spring.io/projects/spring-boot)**
 - **[Maven](https://maven.apache.org)**
-- **[MySQL](https://www.mysql.com)**
+- **[PostgreSQL](https://www.postgresql.org)**
 - **[Hibernate](https://hibernate.org)**
 - **[Flyway](https://flywaydb.org)**
 - **[Lombok](https://projectlombok.org)**
@@ -43,6 +43,6 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
 ## 📝 Licença
 
-
+    Projeto criado por mim
 
 ---

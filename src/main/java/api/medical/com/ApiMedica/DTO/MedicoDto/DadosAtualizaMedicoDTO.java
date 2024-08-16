@@ -9,4 +9,5 @@ public record DadosAtualizaMedicoDTO(
                                       String nome,
                                       String telefone,
                                       DadosEnderecosDTO endereco) {
+
 }

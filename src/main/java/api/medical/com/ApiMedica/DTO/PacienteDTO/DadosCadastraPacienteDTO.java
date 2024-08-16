@@ -1,0 +1,29 @@
+package api.medical.com.ApiMedica.DTO.PacienteDTO;
+
+import api.medical.com.ApiMedica.DTO.EnderecosDto.DadosEnderecosDTO;
+import api.medical.com.ApiMedica.ENUM.Especialidade;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+public record DadosCadastraPacienteDTO(
+        @NotBlank(message = "{nome obrigatorio}")
+        String nome,
+
+        @NotBlank(message = "{email obrigatorio}")
+        @Email(message = "{email invalido}")
+        String email,
+
+        @NotBlank(message = "{telefone.obrigatorio}")
+        String telefone,
+
+        @NotBlank(message = "{cpf obrigatorio}")
+        @Pattern(regexp = "\\d{11}", message = "{cpf invalido}")
+        String cpf,
+
+
+        @NotNull(message = "{endereco obrigatorio}")
+        @Valid DadosEnderecosDTO endereco
+) { }

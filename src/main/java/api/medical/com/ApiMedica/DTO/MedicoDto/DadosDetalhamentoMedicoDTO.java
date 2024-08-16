@@ -3,6 +3,7 @@ package api.medical.com.ApiMedica.DTO.MedicoDto;
 import api.medical.com.ApiMedica.ENUM.Especialidade;
 import api.medical.com.ApiMedica.Modals.Enderecos.Endereco;
 import api.medical.com.ApiMedica.Modals.Medico.Medico;
+import api.medical.com.ApiMedica.Modals.Paciente.Paciente;
 
 public record DadosDetalhamentoMedicoDTO(Long id,
                                          String nome,
@@ -21,4 +22,5 @@ public record DadosDetalhamentoMedicoDTO(Long id,
                 medico.getEspecialidade(),
                 medico.getEndereco());
     }
+
 }

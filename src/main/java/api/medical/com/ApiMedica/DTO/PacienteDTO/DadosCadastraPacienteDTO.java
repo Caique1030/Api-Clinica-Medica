@@ -20,7 +20,7 @@ public record DadosCadastraPacienteDTO(
         String telefone,
 
         @NotBlank(message = "{cpf obrigatorio}")
-        @Pattern(regexp = "\\d{11}", message = "{cpf invalido}")
+        @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}", message = "{cpf invalido}")
         String cpf,
 
 

@@ -5,7 +5,7 @@ import api.medical.com.ApiMedica.DTO.MedicoDto.DadosCadastroMedicoDTO;
 import api.medical.com.ApiMedica.DTO.MedicoDto.DadosDetalhamentoMedicoDTO;
 import api.medical.com.ApiMedica.DTO.MedicoDto.DadosListagemMedicoDTO;
 import api.medical.com.ApiMedica.Modals.Medico.Medico;
-import api.medical.com.ApiMedica.Repositorio.MedicoRepositorio;
+import api.medical.com.ApiMedica.Repositorio.Medico.MedicoRepositorio;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,6 @@ public class MedicoController {
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedicoDTO dados, UriComponentsBuilder uriBuilder){
         var medico = new Medico(dados);
         repositorio.save(medico);
-
         var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedicoDTO(medico));
 
@@ -36,7 +35,7 @@ public class MedicoController {
     @GetMapping
     public ResponseEntity<Page<DadosListagemMedicoDTO>> listarMedicos(@PageableDefault(size=10,sort = {"nome"}) Pageable paginacao){
         var page = repositorio.findAllByAtivoTrue(paginacao)
-                                            .map(DadosListagemMedicoDTO::new);
+                                .map(DadosListagemMedicoDTO::new);
         return ResponseEntity.ok(page);
     }
     @PutMapping

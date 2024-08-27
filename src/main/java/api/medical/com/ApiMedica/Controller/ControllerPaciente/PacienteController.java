@@ -1,14 +1,11 @@
 package api.medical.com.ApiMedica.Controller.ControllerPaciente;
 
-import api.medical.com.ApiMedica.DTO.MedicoDto.DadosAtualizaMedicoDTO;
-import api.medical.com.ApiMedica.DTO.MedicoDto.DadosDetalhamentoMedicoDTO;
-import api.medical.com.ApiMedica.DTO.MedicoDto.DadosListagemMedicoDTO;
 import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosAtualizaPacienteDTO;
 import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosCadastraPacienteDTO;
 import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosDetalhamentoPacienteDTO;
 import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosListagemPacienteDTO;
 import api.medical.com.ApiMedica.Modals.Paciente.Paciente;
-import api.medical.com.ApiMedica.Repositorio.PacienteRepositorio;
+import api.medical.com.ApiMedica.Repositorio.Paciente.PacienteRepositorio;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

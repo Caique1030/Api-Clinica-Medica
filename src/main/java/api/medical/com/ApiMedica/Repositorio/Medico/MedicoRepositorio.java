@@ -1,4 +1,4 @@
-package api.medical.com.ApiMedica.Repositorio;
+package api.medical.com.ApiMedica.Repositorio.Medico;
 
 import api.medical.com.ApiMedica.Modals.Medico.Medico;
 import org.springframework.data.domain.Page;

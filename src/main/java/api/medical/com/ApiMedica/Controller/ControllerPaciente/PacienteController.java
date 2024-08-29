@@ -28,7 +28,7 @@ public class PacienteController {
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastraPacienteDTO dados, UriComponentsBuilder uriBuilder){
         var paciente = new Paciente(dados);
         repositorio.save(paciente);
-        var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(paciente.getId()).toUri();
+        var uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(paciente.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoPacienteDTO(paciente));
     }
 
@@ -52,9 +52,9 @@ public class PacienteController {
     }
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity excluir(@PathVariable Long id){
-        var medico = repositorio.getReferenceById(id);
-        medico.excluir();
-        return  ResponseEntity.noContent().build();
+    public ResponseEntity excluir(@PathVariable Long id) {
+        var paciente = repositorio.getReferenceById(id);
+        paciente.excluir();
+        return ResponseEntity.noContent().build();
     }
 }

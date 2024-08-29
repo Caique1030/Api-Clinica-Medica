@@ -1,5 +1,8 @@
 package api.medical.com.ApiMedica.Controller.ConsultaController;
 
+import api.medical.com.ApiMedica.Modals.Consulta.Consulta;
+import api.medical.com.ApiMedica.Service.AgendamentoConsulta.AgendaDeConsultas;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,13 +15,17 @@ import api.medical.com.ApiMedica.DTO.ConsultaDTO.DadosDetalhamentoConsultaDTO;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/consultas")
+@RequestMapping("consultas")
 public class ConsultaController {
+    @Autowired
+    private AgendaDeConsultas agendamento;
+
 
     @PostMapping
     @Transactional
-    public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsultaDTO dados){
-        return  ResponseEntity.ok(new DadosDetalhamentoConsultaDTO(null,null,null,null));
+    public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsultaDTO dados) {
+        var dto = agendamento.agendar(dados);
+        return ResponseEntity.ok(dto);
     }
 
 

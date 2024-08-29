@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -18,9 +19,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true)
 public class SegurancaConfiguracao {
     @Autowired
     private FiltroSeguranca securityFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
@@ -29,7 +32,9 @@ public class SegurancaConfiguracao {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Define a política de criação de sessão como "stateless"
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/login").permitAll() // Permite requisições POST para "/login" sem autenticação
+                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")// Permite requisições POST para "/login" sem autenticação
                         .anyRequest().authenticated() // Requer autenticação para todas as outras requisições
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // Adiciona o filtro personalizado antes do filtro de autenticação padrão

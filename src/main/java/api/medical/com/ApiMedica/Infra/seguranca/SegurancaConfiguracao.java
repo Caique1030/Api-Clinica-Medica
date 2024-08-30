@@ -34,7 +34,8 @@ public class SegurancaConfiguracao {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")// Permite requisições POST para "/login" sem autenticação
+                        .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()// Permite requisições POST para "/login" sem autenticação
                         .anyRequest().authenticated() // Requer autenticação para todas as outras requisições
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // Adiciona o filtro personalizado antes do filtro de autenticação padrão

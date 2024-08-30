@@ -6,6 +6,7 @@ import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosDetalhamentoPacienteDTO;
 import api.medical.com.ApiMedica.DTO.PacienteDTO.DadosListagemPacienteDTO;
 import api.medical.com.ApiMedica.Modals.Paciente.Paciente;
 import api.medical.com.ApiMedica.Repositorio.Paciente.PacienteRepositorio;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired

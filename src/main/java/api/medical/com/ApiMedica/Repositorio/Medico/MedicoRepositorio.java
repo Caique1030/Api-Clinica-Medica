@@ -26,7 +26,7 @@ public interface MedicoRepositorio extends JpaRepository<Medico,Long> {
         )
     order by random()
     limit 1
-""")
+    """)
     Medico escolherMedicoAleatorioLivreNaData(Especialidade especialidade, LocalDateTime data);
 
 

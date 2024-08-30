@@ -1,5 +1,6 @@
 package api.medical.com.ApiMedica.Modals.Consulta;
 
+import api.medical.com.ApiMedica.DTO.ConsultaDTO.MotivoCancelamento;
 import api.medical.com.ApiMedica.Modals.Medico.Medico;
 import api.medical.com.ApiMedica.Modals.Paciente.Paciente;
 import jakarta.persistence.*;
@@ -32,4 +33,11 @@ public class Consulta {
 
     private LocalDateTime data;
 
+    @Column(name = "motivo_cancelamento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamento motivoCancelamento;
+
+    public void cancelar(MotivoCancelamento motivo) {
+        this.motivoCancelamento = motivo;
+    }
 }
